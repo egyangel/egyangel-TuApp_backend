@@ -17,8 +17,18 @@ Route::namespace('API')->group(function () {
     Route::post('/users/register', 'AuthController@register');
     Route::post('/users/login', 'AuthController@login');
     Route::post('/users/logout', 'AuthController@logout');
+    Route::resource('services', 'Service\serviceAPIController');
+    Route::resource('applications', 'Application\applicationAPIController');
 });
 
 //Route::middleware('auth:api')->get('/user', function (Request $request) {
 //    return $request->user();
 //});
+
+
+
+
+
+Route::group(['prefix' => 'API/v1/'], function () {
+
+});

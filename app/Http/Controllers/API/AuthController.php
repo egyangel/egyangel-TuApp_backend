@@ -14,6 +14,7 @@ class AuthController extends Controller
 {
     public function register(Request $request)
     {
+       
         $data = [
             'name' => ( $request->user['name'] ?? 'Demo User'),
             'email' => $request->user['email'],

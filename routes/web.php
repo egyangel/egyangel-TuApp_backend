@@ -18,3 +18,13 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::group(['prefix' => 'application'], function () {
+    Route::resource('applications', 'Application\applicationController', ["as" => 'application']);
+});
+
+
+Route::group(['prefix' => 'service'], function () {
+    Route::resource('services', 'Service\serviceController', ["as" => 'service']);
+});
